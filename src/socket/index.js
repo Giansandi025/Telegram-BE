@@ -1,12 +1,7 @@
-/* eslint-disable no-unused-vars */
 const chatModel = require('../models/chat.model');
 module.exports = (io, socket) => {
 	socket.on('ping', (data) => {
 		socket.emit('ping-response', data);
-	});
-	socket.on('join-room', (id) => {
-		// join ke ruangan nya sendiri
-		socket.join(id);
 	});
 	socket.on('delete-message', async (data) => {
 		const { sender, receiver, idmessage } = data;
